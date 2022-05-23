@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "84960608450",
+    "project_id": "petfound-e4bfc",
+    "storage_bucket": "petfound-e4bfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84960608450:android:47ccbdf3b7cad7a71dfb5b",
+        "android_client_info": {
+          "package_name": "com.example.petfound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84960608450-9kn0cbb8s0tkdquhr7kgm2pi6fttd309.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0mr3yAX61mt_Segi5wlUyla7FL9CZao0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84960608450-9kn0cbb8s0tkdquhr7kgm2pi6fttd309.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
