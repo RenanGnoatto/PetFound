@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_pet_cadaster.xml" value="0.25" />
-        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_pet.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_usuario.xml" value="0.22" />
       </map>
     </option>
   </component>
