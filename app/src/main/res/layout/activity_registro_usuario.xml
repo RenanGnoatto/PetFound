@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/s_cidade" />
 
     <EditText
-        android:id="@+id/edt_email_registro2"
+        android:id="@+id/edt_nome_usuario"
         android:layout_width="304dp"
         android:layout_height="42dp"
         android:layout_marginStart="25dp"
@@ -139,6 +139,6 @@
         android:backgroundTintMode="add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email_registro2" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_usuario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
