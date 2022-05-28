@@ -30,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         btCriarConta = (Button) findViewById(R.id.bt_criar_conta);
         btSair = (Button) findViewById(R.id.bt_sair);
 
+        btLogar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,TelaPrincipal.class);
+                startActivity(intent);
+            }
+        });
         btCriarConta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
