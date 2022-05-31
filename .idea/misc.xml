@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PetFound/PetFound/app/src/main/res/layout/activity_tela_principal.xml" value="0.17074275362318841" />
+        <entry key="..\:/PetFound/PetFound/app/src/main/res/menu/tela_principal.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_pet_cadaster.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_pet.xml" value="0.25" />

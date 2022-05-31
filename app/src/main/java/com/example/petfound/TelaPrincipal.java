@@ -56,8 +56,6 @@ public class TelaPrincipal extends AppCompatActivity {
         return true;
     }
 
-    //teste
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_tela_principal);
