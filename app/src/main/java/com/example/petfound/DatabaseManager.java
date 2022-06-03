@@ -1,4 +1,4 @@
-    package com.example.petfound.bd;
+    package com.example.petfound;
 
     import android.content.Context;
     import android.database.DatabaseErrorHandler;
@@ -23,7 +23,7 @@
                         "nome varchar(100) not null, " +
                         "estado char)");
                 sqLiteDatabase.execSQL("create table usuario(" +
-                        "id interger primary key autoincrement, " +
+                        "id integer primary key autoincrement, " +
                         "nome varchar(200) not null, " +
                         "email varchar(100) not null, " +
                         "senha varchar(200) not null, " +

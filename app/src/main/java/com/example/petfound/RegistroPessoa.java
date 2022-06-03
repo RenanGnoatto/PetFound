@@ -2,8 +2,8 @@ package com.example.petfound;
 
 public class RegistroPessoa {
 
-    public static String[] colunas = new String[] { Pessoas._ID, Pessoas.NOME,
-            Pessoas.CPF, Pessoas.IDADE };
+    /*public static String[] colunas = new String[] { Pessoas._ID, Pessoas.NOME,
+            Pessoas.CPF, Pessoas.IDADE };*/
 
     public static final String AUTHORITY = "com.br.CadPessoa.provider.pessoa";
 
