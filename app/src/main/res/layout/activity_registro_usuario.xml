@@ -30,7 +30,7 @@
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="Senha"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -45,9 +45,9 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Confirmar Senha"
-        android:textColor="@color/white"
+        android:inputType="textPassword"
+        android:hint="Confirmar Senha"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/s_cidade" />
 
     <EditText
-        android:id="@+id/edt_nome_usuario"
+        android:id="@+id/edt_nome_usuario_registro"
         android:layout_width="304dp"
         android:layout_height="42dp"
         android:layout_marginStart="25dp"
@@ -139,6 +139,19 @@
         android:backgroundTintMode="add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nome_usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_usuario_registro" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/CoordinatorLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
