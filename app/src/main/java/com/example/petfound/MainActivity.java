@@ -3,11 +3,17 @@ package com.example.petfound;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private Button btLogar;
     private Button btCriarConta;
     private Button btSair;
+    private SQLiteDatabase db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = new DatabaseManager(this, "BancoDados", null, 1).getWritableDatabase();
 
         edtEmailLogin = (EditText) findViewById(R.id.edt_email_login);
         edtSenhaLogin = (EditText) findViewById(R.id.edt_senha_login);
@@ -33,10 +41,12 @@ public class MainActivity extends AppCompatActivity {
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,TelaPrincipal.class);
-                startActivity(intent);
+                String usuario = edtEmailLogin.getText().toString();
+                String senha = edtSenhaLogin.getText().toString();
+                validaLogin(usuario, senha);
             }
         });
+
         btCriarConta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,5 +61,18 @@ public class MainActivity extends AppCompatActivity {
                 finishAffinity();
             }
         });
+    }
+
+    public void validaLogin(String usuario, String senha) {
+        Cursor cur = db.rawQuery("select email, senha from usuario " +
+                "where email like '" + usuario + "' and senha = '" + senha + "'", null);
+        if (cur.getCount() > 0) {
+            Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
+            startActivity(intent);
+        }
+        else {
+            Snackbar sbLoginInvalido = Snackbar.make(findViewById(R.id.CoordinatorLayout),"E-mail ou Senha inválidos!",Snackbar.LENGTH_SHORT);
+            sbLoginInvalido.show();
+        }
     }
 }
