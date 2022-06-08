@@ -28,7 +28,7 @@
                         "email varchar(100) not null, " +
                         "senha varchar(200) not null, " +
                         "telefone varchar(50), " +
-                        "foto text, " +
+                        "foto blob," +
                         "id_cidade int not null, " +
                         "constraint id_cidade foreign key (id_cidade) references cidade)");
                 sqLiteDatabase.execSQL("insert into cidade " +
@@ -40,11 +40,11 @@
                         "id_cidade integer not null, " +
                         "detalhes_pet text, " +
                         "detalhes_sumico text, "+
-                        "foto1 text not null," +
-                        "foto2 text not null," +
-                        "foto3 text not null," +
-                        "foto4 text not null," +
-                        "foto5 text not null," +
+                        "foto1 blob not null, " +
+                        "foto2 blob, " +
+                        "foto3 blob, " +
+                        "foto4 blob, " +
+                        "foto5 blob, " +
                         "constraint id_cidade foreign key (id_cidade) references cidade)");
                 sqLiteDatabase.execSQL("create table mensagem(" +
                         "id integer primary key autoincrement, " +

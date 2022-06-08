@@ -35,13 +35,12 @@ public class RegistroUsuario extends AppCompatActivity {
     private Button btRegistrarUsuario;
     private Button btCancelarRegistroUsuario;
     private SQLiteDatabase db = null;
-    private AlertDialog alerta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
-        db = new DatabaseManager(this, "BancoDados", null, 1).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 2).getWritableDatabase();
 
         edtNomeUsuarioRegistro = (EditText) findViewById(R.id.edt_nome_usuario_registro);
         sCidade = (Spinner) findViewById(R.id.s_cidade);
@@ -123,18 +122,5 @@ public class RegistroUsuario extends AppCompatActivity {
         a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sCidade.setAdapter(a);
         return sCidade;
-    }
-
-    private void alertaUsuarioCadastrado() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Cadastro de Usuário");
-        builder.setMessage("Usuário cadastrado com sucesso!");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface arg0, int arg1) {
-                Toast.makeText(RegistroUsuario.this, "positivo=" + arg1, Toast.LENGTH_SHORT).show();
-            }
-        });
-        alerta = builder.create();
-        alerta.show();
     }
 }

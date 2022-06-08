@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="85dp"
         android:text="Relatar Sumiço"
         android:textColor="@color/white"
@@ -22,11 +22,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bt_cancelar_registro_usuario"
+        android:id="@+id/bt_cancelar_registro_pet"
         android:layout_width="305dp"
         android:layout_height="51dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="52dp"
         android:backgroundTint="@color/white"
         android:text="Cancelar"
@@ -34,37 +34,7 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrar_usuario" />
-
-    <Button
-        android:id="@+id/bt_registrar_usuario"
-        android:layout_width="304dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="52dp"
-        android:backgroundTint="@color/white"
-        android:text="Registrar"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_sumico" />
-
-    <Spinner
-        android:id="@+id/s_cidade_pet"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
-        android:backgroundTint="@color/black"
-        android:backgroundTintMode="add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nome_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_registrar_pet" />
 
     <EditText
         android:id="@+id/edt_nome_pet"
@@ -80,19 +50,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_incluir_foto" />
 
-    <ImageView
-        android:id="@+id/iv_pet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
+    <Spinner
+        android:id="@+id/s_cidade_pet"
+        android:layout_width="304dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="141dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="add"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_relatar_sumico"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_pet" />
 
     <EditText
         android:id="@+id/edt_detalhes_pet"
@@ -103,10 +75,11 @@
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:hint="Detalhes do Pet"
+        android:inputType="textMultiLine"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/s_cidade_pet" />
 
@@ -119,12 +92,53 @@
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:hint="Detalhes Sumiço"
+        android:inputType="textMultiLine"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_pet" />
+
+    <Button
+        android:id="@+id/bt_registrar_pet"
+        android:layout_width="304dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="52dp"
+        android:backgroundTint="@color/white"
+        android:text="Registrar"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_sumico" />
+
+    <ImageView
+        android:id="@+id/iv_foto_pet"
+        android:layout_width="160dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_relatar_sumico"
+        tools:srcCompat="@drawable/gato" />
+
+    <Button
+        android:id="@+id/bt_incluir_foto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Incluir Foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_foto_pet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

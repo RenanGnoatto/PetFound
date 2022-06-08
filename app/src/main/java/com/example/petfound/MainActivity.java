@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DatabaseManager(this, "BancoDados", null, 1).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 2).getWritableDatabase();
 
         edtEmailLogin = (EditText) findViewById(R.id.edt_email_login);
         edtSenhaLogin = (EditText) findViewById(R.id.edt_senha_login);
@@ -55,6 +57,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        cbSenhaLoginMostrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cbSenhaLoginMostrar.isChecked()) {
+                    edtSenhaLogin.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+                else {
+                    edtSenhaLogin.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
+
         btSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cur = db.rawQuery("select email, senha from usuario " +
                 "where email like '" + usuario + "' and senha = '" + senha + "'", null);
         if (cur.getCount() > 0) {
-            Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
+            Intent intent = new Intent(MainActivity.this, RegistroPet.class);
             startActivity(intent);
         }
         else {
