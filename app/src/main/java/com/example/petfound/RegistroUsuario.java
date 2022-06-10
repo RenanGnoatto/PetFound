@@ -1,15 +1,10 @@
 package com.example.petfound;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -18,7 +13,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -79,16 +73,16 @@ public class RegistroUsuario extends AppCompatActivity {
                         edtSenhaRegistro.setText("");
                         edtSenhaRegistroConfirmar.setText("");
                         cbSenhaRegistroMostrar.setChecked(false);
-                        /*Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayout),"Registro realizado com sucesso!",Snackbar.LENGTH_SHORT);
+                        /*Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutUsuario),"Registro realizado com sucesso!",Snackbar.LENGTH_SHORT);
                         sbCadastroRealizado.show();*/
                     }
                     else {
-                        Snackbar sbSenhasDiferentes = Snackbar.make(findViewById(R.id.CoordinatorLayout),"As senhas informadas estão diferentes!",Snackbar.LENGTH_SHORT);
+                        Snackbar sbSenhasDiferentes = Snackbar.make(findViewById(R.id.CoordinatorLayoutUsuario),"As senhas informadas estão diferentes!",Snackbar.LENGTH_SHORT);
                         sbSenhasDiferentes.show();
                     }
                 }
                 else {
-                    Snackbar sbCamposObrigatorios = Snackbar.make(findViewById(R.id.CoordinatorLayout),"Todos os campos são obrigatórios!",Snackbar.LENGTH_SHORT);
+                    Snackbar sbCamposObrigatorios = Snackbar.make(findViewById(R.id.CoordinatorLayoutUsuario),"Todos os campos são obrigatórios!",Snackbar.LENGTH_SHORT);
                     sbCamposObrigatorios.show();
                 }
             }

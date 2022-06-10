@@ -2,11 +2,15 @@ package com.example.petfound;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +18,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.android.material.snackbar.Snackbar;
+
+import java.io.ByteArrayOutputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RegistroPet extends AppCompatActivity {
@@ -27,6 +35,8 @@ public class RegistroPet extends AppCompatActivity {
     private Button btRegistrarPet;
     private Button btCancelarRegistroPet;
     private SQLiteDatabase db = null;
+    private String ivFotoPetString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,24 +53,56 @@ public class RegistroPet extends AppCompatActivity {
         btRegistrarPet = (Button) findViewById(R.id.bt_registrar_pet);
         btCancelarRegistroPet = (Button) findViewById(R.id.bt_cancelar_registro_pet);
 
+        populaCidade(sCidadePet);
+
+/*        Cursor cur = db.rawQuery("select * from pet",null);
+        int contador = 0;
+        while(cur.moveToNext()){
+            System.out.println("ID:" + cur.getString(0));
+            System.out.println("NOME:" + cur.getString(1));
+            System.out.println("CIDADE:" + cur.getString(2));
+            System.out.println("DETALHES PET:" + cur.getString(3));
+            System.out.println("DETALHES SUMIÇO:" + cur.getString(4));
+            System.out.println("FOTO:" + cur.getString(5));
+            contador ++;
+        }*/
+
         btIncluirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(takePictureIntent, 1);
-                //ivFotoPet.setImageBitmap(startActivityForResult(takePictureIntent, 1));
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, 1);
             }
         });
-        /*btRegistrarPet.setOnClickListener(new View.OnClickListener() {
+
+        btRegistrarPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ivFotoPet.is null &&
-                        sCidade.getSelectedItemPosition() > 0 &&
-                        edtEmailRegistro.getText() != null &&
-                        edtSenhaRegistro.getText() != null &&
-                        edtSenhaRegistroConfirmar.getText() != null)
+                if (ivFotoPet.getDrawable() != null &&
+                        edtNomePet.getText() != null &&
+                        sCidadePet.getSelectedItemId() > 0) {
+                    db.execSQL("insert into pet " +
+                            "(nome, id_cidade, detalhes_pet, detalhes_sumico, foto1) " +
+                            "values ('" + edtNomePet.getText() + "', " +
+                            sCidadePet.getSelectedItemId() + ", " +
+                            "'" + edtDetalhesPet.getText() + "', " +
+                            "'" + edtDetalhesSumico.getText() + "', " +
+                            "'" + ivFotoPetString.getBytes().toString() + "')");
+                    edtNomePet.setText("");
+                    sCidadePet.setId(0);
+                    edtDetalhesPet.setText("");
+                    edtDetalhesSumico.setText("");
+                    ivFotoPet.setImageDrawable(null);
+                    /*Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
+                    sbCadastroRealizado.show();*/
+                }
+                else {
+                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"É necessário informar a Foto, Nome e cidade do Sumiço do seu Pet!",Snackbar.LENGTH_SHORT);
+                    sbCadastroRealizado.show();
+                }
             }
-        });*/
+        });
     }
 
     private Spinner populaCidade(Spinner sCidade) {
@@ -81,5 +123,30 @@ public class RegistroPet extends AppCompatActivity {
     public void abrirCamera(){
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(takePictureIntent, 1);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent dados) {
+        super.onActivityResult(requestCode, resultCode, dados);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                try {
+                    Uri imageUri = dados.getData();
+
+                    Bitmap fotoBuscada = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                    Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(fotoBuscada,256,256,true);
+
+                    ivFotoPet.setImageBitmap(fotoRedimensionada);
+                    byte[] fotoEmBytes;
+                    ByteArrayOutputStream streamDaFotoEmBytes = new ByteArrayOutputStream();
+                    fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, streamDaFotoEmBytes);
+                    fotoEmBytes = streamDaFotoEmBytes.toByteArray();
+
+                    ivFotoPetString = Base64.encodeToString(fotoEmBytes, Base64.DEFAULT);
+
+                } catch (Exception e){
+
+                }
+            }
+        }
     }
 }
