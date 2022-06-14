@@ -26,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private Button btCriarConta;
     private Button btSair;
     private SQLiteDatabase db = null;
+    private Bundle bundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DatabaseManager(this, "BancoDados", null, 2).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 3).getWritableDatabase();
 
         edtEmailLogin = (EditText) findViewById(R.id.edt_email_login);
         edtSenhaLogin = (EditText) findViewById(R.id.edt_senha_login);
@@ -78,11 +79,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void validaLogin(String usuario, String senha) {
-        Cursor cur = db.rawQuery("select email, senha from usuario " +
+        Cursor cur = db.rawQuery("select id, email, senha from usuario " +
                 "where email like '" + usuario + "' and senha = '" + senha + "'", null);
         if (cur.getCount() > 0) {
-            Intent intent = new Intent(MainActivity.this, RegistroPet.class);
-            startActivity(intent);
+            while(cur.moveToNext()) {
+                bundle.putString("idUsuario", cur.getString(0));
+                Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
         }
         else {
             Snackbar sbLoginInvalido = Snackbar.make(findViewById(R.id.CoordinatorLayout),"E-mail ou Senha inválidos!",Snackbar.LENGTH_SHORT);

@@ -42,7 +42,7 @@ public class RegistroPet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_pet);
-        db = new DatabaseManager(this, "BancoDados", null, 2).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 3).getWritableDatabase();
 
         ivFotoPet = (ImageView) findViewById(R.id.iv_foto_pet);
         btIncluirFoto = (Button) findViewById(R.id.bt_incluir_foto);

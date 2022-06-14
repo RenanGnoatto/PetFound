@@ -3,6 +3,8 @@ package com.example.petfound;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -20,10 +22,18 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityTelaPrincipalBinding binding;
+    private ImageView ivFotoUsuario;
+    private TextView tvNomeUsuario;
+    private TextView tvEmailUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        tvNomeUsuario = findViewById(R.id.tv_nome_usuario);
+        tvEmailUsuario = findViewById(R.id.tv_email_usuario);
+
+        //tvEmailUsuario.setText("");
 
         binding = ActivityTelaPrincipalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

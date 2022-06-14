@@ -38,6 +38,7 @@
                         "id integer primary key autoincrement, " +
                         "nome varchar(100) not null, " +
                         "id_cidade integer not null, " +
+                        "id_usuario integer not null, " +
                         "detalhes_pet text, " +
                         "detalhes_sumico text, "+
                         "foto1 blob not null, " +
@@ -45,7 +46,8 @@
                         "foto3 blob, " +
                         "foto4 blob, " +
                         "foto5 blob, " +
-                        "constraint id_cidade foreign key (id_cidade) references cidade)");
+                        "constraint id_cidade foreign key (id_cidade) references cidade, " +
+                        "constraint id_usuario foreign key (id_usuario) references usuario)");
                 sqLiteDatabase.execSQL("create table mensagem(" +
                         "id integer primary key autoincrement, " +
                         "mensagem text not null, " +
