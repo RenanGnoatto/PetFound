@@ -3,20 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_home.xml" value="0.1795" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_mais.xml" value="0.1795" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1795" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1795" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_lista_pets.xml" value="0.1526268115942029" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_login_teste.xml" value="0.22" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_pet_cadaster.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_pet.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_usuario.xml" value="0.1" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_tela_inicial.xml" value="0.1693840579710145" />
-        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_tela_principal.xml" value="0.1693840579710145" />
-        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/app_bar_tela_principal.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_tela_principal.xml" value="0.25" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_tela_principal2.xml" value="0.1526268115942029" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/app_bar_tela_principal.xml" value="0.1" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/content_tela_principal.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/fragment_gallery.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/fragment_home.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/fragment_slideshow.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/lista_pets.xml" value="0.25" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/listapets.xml" value="0.1526268115942029" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/nav_header_tela_principal.xml" value="0.33" />
-        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/menu/tela_principal.xml" value="0.1109375" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/menu/tela_principal.xml" value="0.33" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/xml/colors.xml" value="0.1693840579710145" />
       </map>
     </option>

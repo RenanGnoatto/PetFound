@@ -36,6 +36,7 @@ public class RegistroPet extends AppCompatActivity {
     private Button btCancelarRegistroPet;
     private SQLiteDatabase db = null;
     private String ivFotoPetString;
+    private Bundle bundle = new Bundle();
 
 
     @Override
@@ -43,6 +44,7 @@ public class RegistroPet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_pet);
         db = new DatabaseManager(this, "BancoDados", null, 3).getWritableDatabase();
+        bundle = getIntent().getExtras();
 
         ivFotoPet = (ImageView) findViewById(R.id.iv_foto_pet);
         btIncluirFoto = (Button) findViewById(R.id.bt_incluir_foto);
@@ -55,7 +57,7 @@ public class RegistroPet extends AppCompatActivity {
 
         populaCidade(sCidadePet);
 
-/*        Cursor cur = db.rawQuery("select * from pet",null);
+        Cursor cur = db.rawQuery("select * from pet",null);
         int contador = 0;
         while(cur.moveToNext()){
             System.out.println("ID:" + cur.getString(0));
@@ -65,7 +67,7 @@ public class RegistroPet extends AppCompatActivity {
             System.out.println("DETALHES SUMIÇO:" + cur.getString(4));
             System.out.println("FOTO:" + cur.getString(5));
             contador ++;
-        }*/
+        }
 
         btIncluirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,9 +85,10 @@ public class RegistroPet extends AppCompatActivity {
                         edtNomePet.getText() != null &&
                         sCidadePet.getSelectedItemId() > 0) {
                     db.execSQL("insert into pet " +
-                            "(nome, id_cidade, detalhes_pet, detalhes_sumico, foto1) " +
+                            "(nome, id_cidade, id_usuario, detalhes_pet, detalhes_sumico, foto1) " +
                             "values ('" + edtNomePet.getText() + "', " +
                             sCidadePet.getSelectedItemId() + ", " +
+                            bundle.getString("idUsuario") + ", " +
                             "'" + edtDetalhesPet.getText() + "', " +
                             "'" + edtDetalhesSumico.getText() + "', " +
                             "'" + ivFotoPetString.getBytes().toString() + "')");
