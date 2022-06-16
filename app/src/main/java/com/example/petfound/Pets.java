@@ -1,20 +1,39 @@
 package com.example.petfound;
 
+import android.graphics.Bitmap;
+
+import java.sql.Blob;
+
 public class Pets {
 
+    private int id;
     private String nome;
-    private String foto;
+    private byte[] foto;
     private String cidade;
     private String detalhesPet;
     private String detalhesSumico;
     private String nomeDono;
 
-    public Pets (String nome, String cidade, String detalhesPet, String detalhesSumico, String nomeDono) {
+    public Pets (int id, String nome, String cidade, String detalhesPet, String detalhesSumico, String nomeDono, byte[] foto) {
+        this.id = id;
         this.nome = nome;
         this.cidade = cidade;
         this.detalhesPet = detalhesPet;
         this.detalhesSumico = detalhesSumico;
         this.nomeDono = nomeDono;
+        this.foto = foto;
+    }
+
+    public Pets(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -25,11 +44,11 @@ public class Pets {
         this.nome = nome;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 

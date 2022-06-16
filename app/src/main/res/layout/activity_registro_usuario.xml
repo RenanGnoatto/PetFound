@@ -7,151 +7,164 @@
     android:background="@drawable/background"
     tools:context=".RegistroUsuario">
 
-    <TextView
-        android:id="@+id/tv_registro_usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="85dp"
-        android:text="Registro Usuário"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edt_senha_registro"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email_registro" />
-
-    <EditText
-        android:id="@+id/edt_senha_registro_confirmar"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Confirmar Senha"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_senha_registro" />
-
-    <CheckBox
-        android:id="@+id/cb_senha_registro_mostrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="25dp"
-        android:text="Mostrar Senha"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_senha_registro_confirmar" />
-
-    <Button
-        android:id="@+id/bt_registrar_usuario"
-        android:layout_width="304dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="52dp"
-        android:backgroundTint="@color/white"
-        android:text="Registrar"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cb_senha_registro_mostrar" />
-
     <Button
         android:id="@+id/bt_cancelar_registro_usuario"
-        android:layout_width="305dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="@color/white"
         android:text="Cancelar"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_registrar_usuario" />
 
+    <Button
+        android:id="@+id/bt_registrar_usuario"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="81dp"
+        android:backgroundTint="@color/white"
+        android:text="Registrar"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_senha_registro_mostrar" />
+
+    <CheckBox
+        android:id="@+id/cb_senha_registro_mostrar"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
+        android:text="Mostrar Senha"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_senha_registro_confirmar" />
+
+    <EditText
+        android:id="@+id/edt_senha_registro_confirmar"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
+        android:ems="10"
+        android:hint="Confirmar Senha"
+        android:inputType="textPassword"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_senha_registro" />
+
+    <EditText
+        android:id="@+id/edt_senha_registro"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_registro" />
+
     <EditText
         android:id="@+id/edt_email_registro"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="56dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textPersonName"
         android:textColorHint="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_cidade" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_telefone_registro" />
 
     <EditText
         android:id="@+id/edt_nome_usuario_registro"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="25dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="56dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
         android:textColorHint="@color/white"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_registro_usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/CoordinatorLayoutUsuario" />
 
     <Spinner
         android:id="@+id/s_cidade"
-        android:layout_width="304dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="56dp"
         android:backgroundTint="@color/black"
         android:backgroundTintMode="add"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_nome_usuario_registro" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/CoordinatorLayoutUsuario"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:orientation="horizontal"></LinearLayout>
+-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <EditText
+        android:id="@+id/edt_telefone_registro"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
+        android:ems="10"
+        android:hint="Telefone"
+        android:inputType="numberDecimal"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s_cidade" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

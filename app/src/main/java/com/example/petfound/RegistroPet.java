@@ -2,7 +2,6 @@ package com.example.petfound;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,7 +20,6 @@ import android.widget.Spinner;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RegistroPet extends AppCompatActivity {
@@ -37,7 +35,6 @@ public class RegistroPet extends AppCompatActivity {
     private SQLiteDatabase db = null;
     private String ivFotoPetString;
     private Bundle bundle = new Bundle();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +53,6 @@ public class RegistroPet extends AppCompatActivity {
         btCancelarRegistroPet = (Button) findViewById(R.id.bt_cancelar_registro_pet);
 
         populaCidade(sCidadePet);
-
-        Cursor cur = db.rawQuery("select * from pet",null);
-        int contador = 0;
-        while(cur.moveToNext()){
-            System.out.println("ID:" + cur.getString(0));
-            System.out.println("NOME:" + cur.getString(1));
-            System.out.println("CIDADE:" + cur.getString(2));
-            System.out.println("DETALHES PET:" + cur.getString(3));
-            System.out.println("DETALHES SUMIÇO:" + cur.getString(4));
-            System.out.println("FOTO:" + cur.getString(5));
-            contador ++;
-        }
 
         btIncluirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +76,7 @@ public class RegistroPet extends AppCompatActivity {
                             bundle.getString("idUsuario") + ", " +
                             "'" + edtDetalhesPet.getText() + "', " +
                             "'" + edtDetalhesSumico.getText() + "', " +
-                            "'" + ivFotoPetString.getBytes().toString() + "')");
+                            "'" + ivFotoPetString.getBytes() + "')");
                     edtNomePet.setText("");
                     sCidadePet.setId(0);
                     edtDetalhesPet.setText("");
@@ -139,11 +124,9 @@ public class RegistroPet extends AppCompatActivity {
                     Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(fotoBuscada,256,256,true);
 
                     ivFotoPet.setImageBitmap(fotoRedimensionada);
-                    byte[] fotoEmBytes;
-                    ByteArrayOutputStream streamDaFotoEmBytes = new ByteArrayOutputStream();
-                    fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, streamDaFotoEmBytes);
-                    fotoEmBytes = streamDaFotoEmBytes.toByteArray();
-
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, stream);
+                    byte[] fotoEmBytes = stream.toByteArray();
                     ivFotoPetString = Base64.encodeToString(fotoEmBytes, Base64.DEFAULT);
 
                 } catch (Exception e){

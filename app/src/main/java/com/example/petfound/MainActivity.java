@@ -81,18 +81,26 @@ public class MainActivity extends AppCompatActivity {
     public void validaLogin(String usuario, String senha) {
         Cursor cur = db.rawQuery("select id, nome, email, senha from usuario " +
                 "where email like '" + usuario + "' and senha = '" + senha + "'", null);
-        if (cur.getCount() > 0) {
-            while(cur.moveToNext()) {
-                bundle.putString("idUsuario", cur.getString(0));
-                bundle.putString("nomeUsuario", cur.getString(1));
-                bundle.putString("emailUsuario", cur.getString(2));
-                Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
-                intent.putExtras(bundle);
-                startActivity(intent);
+        System.out.println("USUARIO: " + edtEmailLogin.getText());
+        System.out.println("SENHA: " + edtSenhaLogin.getText());
+        if (edtEmailLogin.getText().length() > 0 ||
+                edtSenhaLogin.getText().length() > 0) {
+            if (cur.getCount() > 0) {
+                while (cur.moveToNext()) {
+                    bundle.putString("idUsuario", cur.getString(0));
+                    bundle.putString("nomeUsuario", cur.getString(1));
+                    bundle.putString("emailUsuario", cur.getString(2));
+                    Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+            } else {
+                Snackbar sbLoginInvalido = Snackbar.make(findViewById(R.id.CoordinatorLayout), "E-mail ou Senha inválidos!", Snackbar.LENGTH_SHORT);
+                sbLoginInvalido.show();
             }
         }
         else {
-            Snackbar sbLoginInvalido = Snackbar.make(findViewById(R.id.CoordinatorLayout),"E-mail ou Senha inválidos!",Snackbar.LENGTH_SHORT);
+            Snackbar sbLoginInvalido = Snackbar.make(findViewById(R.id.CoordinatorLayout),"Informe e-mail e senha!",Snackbar.LENGTH_SHORT);
             sbLoginInvalido.show();
         }
     }
