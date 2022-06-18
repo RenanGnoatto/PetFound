@@ -35,6 +35,7 @@ public class RegistroPet extends AppCompatActivity {
     private SQLiteDatabase db = null;
     private String ivFotoPetString;
     private Bundle bundle = new Bundle();
+    byte[] fotoEmBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +77,7 @@ public class RegistroPet extends AppCompatActivity {
                             bundle.getString("idUsuario") + ", " +
                             "'" + edtDetalhesPet.getText() + "', " +
                             "'" + edtDetalhesSumico.getText() + "', " +
-                            "'" + ivFotoPetString.getBytes() + "')");
+                            "'" + fotoEmBytes + "')");
                     edtNomePet.setText("");
                     sCidadePet.setId(0);
                     edtDetalhesPet.setText("");
@@ -126,7 +127,7 @@ public class RegistroPet extends AppCompatActivity {
                     ivFotoPet.setImageBitmap(fotoRedimensionada);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, stream);
-                    byte[] fotoEmBytes = stream.toByteArray();
+                    fotoEmBytes = stream.toByteArray();
                     ivFotoPetString = Base64.encodeToString(fotoEmBytes, Base64.DEFAULT);
 
                 } catch (Exception e){

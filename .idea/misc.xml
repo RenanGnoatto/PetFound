@@ -9,7 +9,7 @@
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1795" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1795" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_detalhes_pet.xml" value="0.25" />
-        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_lista_pets.xml" value="0.1526268115942029" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_lista_pets.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_login_teste.xml" value="0.22" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_pet_cadaster.xml" value="0.25" />
@@ -23,7 +23,7 @@
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/fragment_gallery.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/fragment_home.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/fragment_slideshow.xml" value="0.1693840579710145" />
-        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/lista_pets.xml" value="0.25" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/lista_pets.xml" value="0.33" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/listapets.xml" value="0.1526268115942029" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/nav_header_tela_principal.xml" value="0.33" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />

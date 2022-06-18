@@ -31,34 +31,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:textSize="20sp"
             android:text="Nome do Pet" />
-
-        <TextView
-            android:id="@+id/tv_cidade_pet_lista"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Cidade do Pet" />
 
         <TextView
             android:id="@+id/tv_detalhes_pet_lista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Detalhes do Pet"
             android:textColor="@color/white"
-            android:text="Detalhes do Pet" />
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_detalhes_sumico_lista"
+            android:id="@+id/tv_cidade_pet_lista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Cidade do Pet"
             android:textColor="@color/white"
-            android:text="Detalhes do Sumiço" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_nome_dono_pet_lista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:textSize="16sp"
             android:text="Nome do Dono" />
 
     </LinearLayout>
