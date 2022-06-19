@@ -12,6 +12,7 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private TextView tvBoasVindas;
     private Button btEditarPerfil;
+    private Button btMeusPets;
     private Button btListaPets;
     private Button btRelatarSumico;
     private Bundle bundle = new Bundle();
@@ -24,12 +25,28 @@ public class TelaPrincipal extends AppCompatActivity {
 
         tvBoasVindas = (TextView) findViewById(R.id.tv_boas_vindas);
         btEditarPerfil = (Button) findViewById(R.id.bt_editar_perfil);
+        btMeusPets = (Button) findViewById(R.id.bt_meus_pets);
         btListaPets = (Button) findViewById(R.id.bt_lista_pets);
         btRelatarSumico = (Button) findViewById(R.id.bt_relatar_sumico);
 
         bundle = getIntent().getExtras();
         tvBoasVindas.setText("Olá " + bundle.getString("nomeUsuario") + ", seja bem-vindo(a)!" );
 
+        btEditarPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPrincipal.this, EditorUsuario.class);
+                startActivity(intent);
+            }
+        });
+
+        btMeusPets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPrincipal.this, MeusPets.class);
+                startActivity(intent);
+            }
+        });
         btListaPets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

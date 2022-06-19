@@ -12,7 +12,7 @@
         android:layout_width="255dp"
         android:layout_height="63dp"
         android:layout_marginStart="78dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="@color/white"
         android:text="Relatar Sumiço"
         android:textColor="@color/black"
@@ -24,12 +24,12 @@
         android:layout_width="255dp"
         android:layout_height="63dp"
         android:layout_marginStart="78dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="@color/white"
         android:text="Lista de Pets"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_editar_perfil" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_meus_pets" />
 
     <Button
         android:id="@+id/bt_editar_perfil"
@@ -42,6 +42,18 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_boas_vindas" />
+
+    <Button
+        android:id="@+id/bt_meus_pets"
+        android:layout_width="255dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/white"
+        android:text="Meus Pets"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_editar_perfil" />
 
     <TextView
         android:id="@+id/tv_boas_vindas"
