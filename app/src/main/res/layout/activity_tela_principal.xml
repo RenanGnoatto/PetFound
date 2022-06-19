@@ -11,13 +11,11 @@
         android:id="@+id/bt_relatar_sumico"
         android:layout_width="255dp"
         android:layout_height="63dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/white"
         android:text="Relatar Sumiço"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_lista_pets" />
 
@@ -25,15 +23,25 @@
         android:id="@+id/bt_lista_pets"
         android:layout_width="255dp"
         android:layout_height="63dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/white"
         android:text="Lista de Pets"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_editar_perfil" />
+
+    <Button
+        android:id="@+id/bt_editar_perfil"
+        android:layout_width="255dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/white"
+        android:text="Editar Perfil"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_boas_vindas" />
 
     <TextView
         android:id="@+id/tv_boas_vindas"
@@ -42,6 +50,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
+        android:text="Boas vindas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

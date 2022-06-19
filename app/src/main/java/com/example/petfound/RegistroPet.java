@@ -41,7 +41,7 @@ public class RegistroPet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_pet);
-        db = new DatabaseManager(this, "BancoDados", null, 3).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 5).getWritableDatabase();
         bundle = getIntent().getExtras();
 
         ivFotoPet = (ImageView) findViewById(R.id.iv_foto_pet);
@@ -77,7 +77,7 @@ public class RegistroPet extends AppCompatActivity {
                             bundle.getString("idUsuario") + ", " +
                             "'" + edtDetalhesPet.getText() + "', " +
                             "'" + edtDetalhesSumico.getText() + "', " +
-                            "'" + fotoEmBytes + "')");
+                            "'" + ivFotoPetString + "')");
                     edtNomePet.setText("");
                     sCidadePet.setId(0);
                     edtDetalhesPet.setText("");

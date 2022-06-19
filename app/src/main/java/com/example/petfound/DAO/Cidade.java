@@ -14,9 +14,10 @@ public class Cidade {
     String estado;
 
 
-    public Cidade (int id, String nome){
+    public Cidade (int id, String nome, String estado){
         this.id = id;
         this.nome = nome;
+        this.estado = estado;
     }
 
     public int getId() {
@@ -45,8 +46,6 @@ public class Cidade {
 
     @Override
     public String toString() {
-        return nome;
+        return nome + "/" + estado;
     }
-
-
 }

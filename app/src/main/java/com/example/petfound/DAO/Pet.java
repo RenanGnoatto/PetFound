@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 import java.sql.Blob;
 
-public class Pets {
+public class Pet {
 
     private int id;
     private String nome;
@@ -14,7 +14,7 @@ public class Pets {
     private String detalhesSumico;
     private String nomeDono;
 
-    public Pets (int id, String nome, String cidade, String detalhesPet, String detalhesSumico, String nomeDono, byte[] foto) {
+    public Pet(int id, String nome, String cidade, String detalhesPet, String detalhesSumico, String nomeDono, byte[] foto) {
         this.id = id;
         this.nome = nome;
         this.cidade = cidade;
@@ -24,7 +24,7 @@ public class Pets {
         this.foto = foto;
     }
 
-    public Pets(){
+    public Pet(){
 
     }
 

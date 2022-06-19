@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class TelaPrincipal extends AppCompatActivity {
 
     private TextView tvBoasVindas;
+    private Button btEditarPerfil;
     private Button btListaPets;
     private Button btRelatarSumico;
     private Bundle bundle = new Bundle();
@@ -22,6 +23,7 @@ public class TelaPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_tela_principal);
 
         tvBoasVindas = (TextView) findViewById(R.id.tv_boas_vindas);
+        btEditarPerfil = (Button) findViewById(R.id.bt_editar_perfil);
         btListaPets = (Button) findViewById(R.id.bt_lista_pets);
         btRelatarSumico = (Button) findViewById(R.id.bt_relatar_sumico);
 

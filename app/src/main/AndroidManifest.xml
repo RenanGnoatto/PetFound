@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.petfound">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetFound"
         tools:targetApi="31">
+        <activity
+            android:name=".EditorUsuario"
+            android:exported="false" />
         <activity
             android:name=".DetalhesPet"
             android:exported="false" />

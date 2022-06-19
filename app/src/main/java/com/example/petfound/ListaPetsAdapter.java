@@ -2,26 +2,23 @@ package com.example.petfound;
 
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.util.Base64;
 
-import com.example.petfound.DAO.Pets;
+import com.example.petfound.DAO.Pet;
 
 import java.util.ArrayList;
 
-public class ListaPetsAdapter extends ArrayAdapter<Pets> {
+public class ListaPetsAdapter extends ArrayAdapter<Pet> {
 
     private final Context context;
-    private final ArrayList<Pets> listaPets;
+    private final ArrayList<Pet> listaPets;
 
-    public ListaPetsAdapter(Context context, ArrayList<Pets> listaPets) {
+    public ListaPetsAdapter(Context context, ArrayList<Pet> listaPets) {
         super(context,R.layout.lista_pets,listaPets);
         this.context = context;
         this.listaPets = listaPets;
@@ -37,16 +34,16 @@ public class ListaPetsAdapter extends ArrayAdapter<Pets> {
         TextView tvNomeDono = (TextView) rowView.findViewById(R.id.tv_nome_dono_pet_lista);
         ImageView ivFotoPet = (ImageView) rowView.findViewById(R.id.iv_foto_pet_lista);
 
-        tvNomePet.setText(listaPets.get(position).getNome());
-        tvCidadePet.setText(listaPets.get(position).getCidade());
-        tvDetalhesPet.setText(listaPets.get(position).getDetalhesPet());
-        tvNomeDono.setText(listaPets.get(position).getNomeDono());
+        tvNomePet.setText("Nome do Pet: " + listaPets.get(position).getNome());
+        tvCidadePet.setText("Cidade: " + listaPets.get(position).getCidade());
+        tvDetalhesPet.setText("Detalhes do Pet: " + listaPets.get(position).getDetalhesPet());
+        tvNomeDono.setText("Nome do(a) dono(a): " + listaPets.get(position).getNomeDono());
         /*ByteArrayInputStream imageStream = new ByteArrayInputStream(listaPets.get(position).getFoto());
         Bitmap bitmap = BitmapFactory.decodeStream(imageStream);*/
 
-        byte[] fotoEmBytes = Base64.decode(listaPets.get(position).getFoto(), Base64.DEFAULT);
+        /*byte[] fotoEmBytes = Base64.decode(listaPets.get(position).getFoto(), Base64.DEFAULT);
         System.out.println("BYTES: " + listaPets.get(position).getFoto());
-        Bitmap bitmap = BitmapFactory.decodeByteArray(fotoEmBytes, 0, fotoEmBytes.length);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(fotoEmBytes, 0, fotoEmBytes.length);*/
 
         /*byte[] fotoEmBytes = Base64.decode(listaPets.get(position).getFoto(), Base64.DEFAULT);
         Drawable image = new BitmapDrawable(BitmapFactory.decodeByteArray(fotoEmBytes, 0, fotoEmBytes.length));*/
