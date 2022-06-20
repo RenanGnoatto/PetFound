@@ -35,13 +35,12 @@ public class RegistroPet extends AppCompatActivity {
     private SQLiteDatabase db = null;
     private String ivFotoPetString;
     private Bundle bundle = new Bundle();
-    byte[] fotoEmBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_pet);
-        db = new DatabaseManager(this, "BancoDados", null, 5).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
         bundle = getIntent().getExtras();
 
         ivFotoPet = (ImageView) findViewById(R.id.iv_foto_pet);
@@ -58,7 +57,7 @@ public class RegistroPet extends AppCompatActivity {
         btIncluirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
                 startActivityForResult(intent, 1);
             }
@@ -83,13 +82,20 @@ public class RegistroPet extends AppCompatActivity {
                     edtDetalhesPet.setText("");
                     edtDetalhesSumico.setText("");
                     ivFotoPet.setImageDrawable(null);
-                    /*Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
-                    sbCadastroRealizado.show();*/
-                }
-                else {
-                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"É necessário informar a Foto, Nome e cidade do Sumiço do seu Pet!",Snackbar.LENGTH_SHORT);
+                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
                     sbCadastroRealizado.show();
                 }
+                else {
+                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!",Snackbar.LENGTH_SHORT);
+                    sbCadastroRealizado.show();
+                }
+            }
+        });
+
+        btCancelarRegistroPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -127,9 +133,8 @@ public class RegistroPet extends AppCompatActivity {
                     ivFotoPet.setImageBitmap(fotoRedimensionada);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, stream);
-                    fotoEmBytes = stream.toByteArray();
+                    byte[] fotoEmBytes = stream.toByteArray();
                     ivFotoPetString = Base64.encodeToString(fotoEmBytes, Base64.DEFAULT);
-
                 } catch (Exception e){
 
                 }

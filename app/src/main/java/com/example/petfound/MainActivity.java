@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DatabaseManager(this, "BancoDados", null, 5).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
 
         edtEmailLogin = (EditText) findViewById(R.id.edt_email_login);
         edtSenhaLogin = (EditText) findViewById(R.id.edt_senha_login);

@@ -2,6 +2,8 @@ package com.example.petfound;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,20 +40,10 @@ public class ListaPetsAdapter extends ArrayAdapter<Pet> {
         tvCidadePet.setText("Cidade: " + listaPets.get(position).getCidade());
         tvDetalhesPet.setText("Detalhes do Pet: " + listaPets.get(position).getDetalhesPet());
         tvNomeDono.setText("Nome do(a) dono(a): " + listaPets.get(position).getNomeDono());
-        /*ByteArrayInputStream imageStream = new ByteArrayInputStream(listaPets.get(position).getFoto());
-        Bitmap bitmap = BitmapFactory.decodeStream(imageStream);*/
 
-        /*byte[] fotoEmBytes = Base64.decode(listaPets.get(position).getFoto(), Base64.DEFAULT);
-        System.out.println("BYTES: " + listaPets.get(position).getFoto());
-        Bitmap bitmap = BitmapFactory.decodeByteArray(fotoEmBytes, 0, fotoEmBytes.length);*/
-
-        /*byte[] fotoEmBytes = Base64.decode(listaPets.get(position).getFoto(), Base64.DEFAULT);
-        Drawable image = new BitmapDrawable(BitmapFactory.decodeByteArray(fotoEmBytes, 0, fotoEmBytes.length));*/
-
-        /*byte [] fotoEmBytes = listaPets.get(position).getFoto();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(fotoEmBytes, 0, fotoEmBytes.length);*/
-
-        //ivFotoPet.setImageDrawable(image);
+        byte[] imagemPetBytes = listaPets.get(position).getFoto();
+        Bitmap foto = BitmapFactory.decodeByteArray(imagemPetBytes,0,imagemPetBytes.length);
+        ivFotoPet.setImageBitmap(foto);
 
         return rowView;
     }

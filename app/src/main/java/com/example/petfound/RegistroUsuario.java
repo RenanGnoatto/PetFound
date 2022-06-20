@@ -36,7 +36,7 @@ public class RegistroUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
-        db = new DatabaseManager(this, "BancoDados", null, 5).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
 
         edtNomeUsuarioRegistro = (EditText) findViewById(R.id.edt_nome_usuario_registro);
         sCidade = (Spinner) findViewById(R.id.s_cidade);

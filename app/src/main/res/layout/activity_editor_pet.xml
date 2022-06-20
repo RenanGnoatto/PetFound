@@ -5,121 +5,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".RegistroPet">
+    tools:context=".EditorPet">
 
     <Button
-        android:id="@+id/bt_cancelar_registro_pet"
+        android:id="@+id/bt_cancelar_atualizacao_pet"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="104dp"
         android:backgroundTint="@color/white"
-        android:text="Cancelar"
+        android:text="@string/cancelar"
         android:textColor="@color/black"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrar_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_atualizar_pet" />
 
     <EditText
-        android:id="@+id/edt_nome_pet"
+        android:id="@+id/edt_nome_pet_edit"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
         android:ems="10"
         android:hint="Nome do Pet"
         android:inputType="textPersonName"
-        android:textColorHint="@color/white"
+        android:textColorHint="#263238"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_incluir_foto" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_alterar_foto"
+        android:importantForAutofill="no" />
 
     <Spinner
-        android:id="@+id/s_cidade_pet"
+        android:id="@+id/s_cidade_pet_edit"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
         android:backgroundTint="@color/black"
         android:backgroundTintMode="add"
         android:textSize="16sp"
-        android:contentDescription="Cidades"
+        android:contentDescription="@string/action_settings"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nome_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_pet_edit" />
 
     <EditText
-        android:id="@+id/edt_detalhes_pet"
+        android:id="@+id/edt_detalhes_pet_edit"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
         android:hint="Detalhes do Pet"
         android:inputType="textMultiLine"
-        android:textColorHint="@color/white"
+        android:textColorHint="#4E342E"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_cidade_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/s_cidade_pet_edit" />
 
     <EditText
-        android:id="@+id/edt_detalhes_sumico"
+        android:id="@+id/edt_detalhes_sumico_edit"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="56dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
         android:hint="Detalhes Sumiço"
         android:inputType="textMultiLine"
-        android:textColorHint="@color/white"
+        android:textColorHint="#5D4037"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_pet_edit" />
 
     <Button
-        android:id="@+id/bt_registrar_pet"
+        android:id="@+id/bt_atualizar_pet"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="81dp"
         android:backgroundTint="@color/white"
-        android:text="Registrar"
+        android:text="Atualizar"
         android:textColor="@color/black"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_sumico" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_sumico_edit" />
 
     <Button
-        android:id="@+id/bt_incluir_foto"
+        android:id="@+id/bt_alterar_foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="137dp"
         android:layout_marginTop="25dp"
-        android:text="Incluir Foto"
+        android:layout_marginEnd="129dp"
+        android:text="Alterar Foto"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_foto_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_foto_pet_edit" />
 
     <ImageView
-        android:id="@+id/iv_foto_pet"
+        android:id="@+id/iv_foto_pet_edit"
         android:layout_width="124dp"
         android:layout_height="118dp"
         android:layout_marginStart="144dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CoordinatorLayoutPet"
-        app:srcCompat="@drawable/gato" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/CoordinatorLayoutPet"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="143dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"/>
+        app:srcCompat="@drawable/gato"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

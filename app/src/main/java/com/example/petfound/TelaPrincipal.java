@@ -35,7 +35,9 @@ public class TelaPrincipal extends AppCompatActivity {
         btEditarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle2.putString("idUsuario", bundle.getString("idUsuario"));
                 Intent intent = new Intent(TelaPrincipal.this, EditorUsuario.class);
+                intent.putExtras(bundle2);
                 startActivity(intent);
             }
         });
@@ -43,7 +45,9 @@ public class TelaPrincipal extends AppCompatActivity {
         btMeusPets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle2.putString("idUsuario", bundle.getString("idUsuario"));
                 Intent intent = new Intent(TelaPrincipal.this, MeusPets.class);
+                intent.putExtras(bundle2);
                 startActivity(intent);
             }
         });

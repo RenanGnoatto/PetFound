@@ -42,7 +42,7 @@
     <CheckBox
         android:id="@+id/cb_senha_registro_mostrar"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"
@@ -57,7 +57,7 @@
     <EditText
         android:id="@+id/edt_senha_registro_confirmar"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"
@@ -73,7 +73,7 @@
     <EditText
         android:id="@+id/edt_senha_registro"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"
@@ -89,7 +89,7 @@
     <EditText
         android:id="@+id/edt_email_registro"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"
@@ -105,7 +105,7 @@
     <EditText
         android:id="@+id/edt_nome_usuario_registro"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="56dp"
@@ -121,7 +121,7 @@
     <Spinner
         android:id="@+id/s_cidade"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"
@@ -130,7 +130,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nome_usuario_registro" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_usuario_registro"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/CoordinatorLayoutUsuario"
@@ -154,7 +155,7 @@
     <EditText
         android:id="@+id/edt_telefone_registro"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"

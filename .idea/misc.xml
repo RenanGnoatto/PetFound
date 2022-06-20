@@ -9,9 +9,11 @@
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1795" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1795" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_detalhes_pet.xml" value="0.25" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_editor_pet.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_lista_pets.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_login_teste.xml" value="0.22" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_meus_pets.xml" value="0.1526268115942029" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_pet_cadaster.xml" value="0.25" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_pet.xml" value="0.22" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/activity_registro_usuario.xml" value="0.22" />
@@ -28,6 +30,8 @@
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/layout/nav_header_tela_principal.xml" value="0.33" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/menu/tela_principal.xml" value="0.33" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/renan/AndroidStudioProjects/PetFound/app/src/main/res/xml/colors.xml" value="0.1693840579710145" />
       </map>
     </option>

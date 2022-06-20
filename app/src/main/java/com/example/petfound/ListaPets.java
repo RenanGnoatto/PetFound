@@ -31,7 +31,7 @@ public class ListaPets extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_pets);
-        db = new DatabaseManager(this, "BancoDados", null, 5).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
 
         lvPets = (ListView) findViewById(R.id.lv_pets);
         sCidadesLista = (Spinner) findViewById(R.id.s_cidade_lista);
