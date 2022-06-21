@@ -1,7 +1,9 @@
 package com.example.petfound;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -45,14 +47,6 @@ public class MeusPets extends AppCompatActivity {
             }
         });
 
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        lvMeusPets = (ListView) findViewById(R.id.lv_meus_pets);
-        adapter = new ListaPetsAdapter(this, adicionaPets());
-        lvMeusPets.setAdapter(adapter);
     }
 
     private ArrayList<Pet> adicionaPets() {

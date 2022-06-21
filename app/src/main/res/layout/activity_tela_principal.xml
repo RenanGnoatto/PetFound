@@ -28,7 +28,7 @@
             android:id="@+id/tv_boas_vindas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:text="Boas vindas"

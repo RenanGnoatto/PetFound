@@ -44,7 +44,7 @@
 
     <TextView
         android:id="@+id/tv_detalhes_pet_det"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/tv_detalhes_sumico_det"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"

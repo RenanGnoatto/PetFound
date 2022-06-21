@@ -2,11 +2,13 @@ package com.example.petfound;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -74,6 +76,7 @@ public class EditorPet extends AppCompatActivity {
                 finish();
             }
         });
+
         btAtualizarPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,9 +91,10 @@ public class EditorPet extends AppCompatActivity {
                                         " where id = " + bundle.getInt("idPet"));
                         Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"Registro do Pet atualizado com sucesso. Boa sorte nas buscas!", Snackbar.LENGTH_SHORT);
                         sbCadastroAtualizado.show();
+
                 }
                 else {
-                    Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!", Snackbar.LENGTH_SHORT);
+                    Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"É necessário informar uma Foto, Nome e Cidade!", Snackbar.LENGTH_SHORT);
                     sbCadastroAtualizado.show();
                 }
             }
@@ -118,6 +122,7 @@ public class EditorPet extends AppCompatActivity {
             byte[] imagemPetBytes = Base64.decode(cur.getBlob(0),Base64.DEFAULT);
             Bitmap foto = BitmapFactory.decodeByteArray(imagemPetBytes,0,imagemPetBytes.length);
             ivFotoPetEdit.setImageBitmap(foto);
+            ivFotoPetString = Base64.encodeToString(imagemPetBytes, Base64.DEFAULT);
             edtNomePetEdit.setText(cur.getString(1));
             sCidadePetEdit.setSelection(cur.getInt(2));
             edtDetalhesPetEdit.setText(cur.getString(3));
@@ -133,12 +138,16 @@ public class EditorPet extends AppCompatActivity {
                     Uri imageUri = dados.getData();
 
                     Bitmap fotoBuscada = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-                    Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(fotoBuscada,256,256,true);
-
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90);
+                    Bitmap fotoRedimensionada = Bitmap.createBitmap(fotoBuscada,0,0,fotoBuscada.getWidth(),fotoBuscada.getHeight(),matrix,true);
+                    fotoRedimensionada = Bitmap.createScaledBitmap(fotoRedimensionada,256,256,true);
                     ivFotoPetEdit.setImageBitmap(fotoRedimensionada);
+
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, stream);
                     byte[] fotoEmBytes = stream.toByteArray();
+
                     ivFotoPetString = Base64.encodeToString(fotoEmBytes, Base64.DEFAULT);
                 } catch (Exception e){
 

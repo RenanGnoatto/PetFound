@@ -92,7 +92,7 @@ public class RegistroPet extends AppCompatActivity {
                     sbCadastroRealizado.show();
                 }
                 else {
-                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutRegistroPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!",Snackbar.LENGTH_SHORT);
+                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutRegistroPet),"É necessário informar uma Foto, Nome e Cidade!",Snackbar.LENGTH_SHORT);
                     sbCadastroRealizado.show();
                 }
             }
@@ -133,10 +133,10 @@ public class RegistroPet extends AppCompatActivity {
                 try {
                     Uri imageUri = dados.getData();
                     Bitmap fotoBuscada = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-                    Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(fotoBuscada,256,256,true);
-                    /*Matrix matrix = new Matrix();
+                    Matrix matrix = new Matrix();
                     matrix.postRotate(90);
-                    Bitmap fotoRedimensionada = Bitmap.createBitmap(fotoBuscada,0,0,5000,5000,matrix,true);*/
+                    Bitmap fotoRedimensionada = Bitmap.createBitmap(fotoBuscada,0,0,fotoBuscada.getWidth(),fotoBuscada.getHeight(),matrix,true);
+                    fotoRedimensionada = Bitmap.createScaledBitmap(fotoRedimensionada,256,256,true);
                     ivFotoPet.setImageBitmap(fotoRedimensionada);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 0, stream);
