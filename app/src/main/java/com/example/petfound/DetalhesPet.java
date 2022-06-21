@@ -6,8 +6,11 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -92,7 +95,9 @@ public class DetalhesPet extends AppCompatActivity {
                 " where p.id_cidade = c.id and p.id_usuario = u.id" +
                 " and p.id = " + idPet + "", null);
         while (cur.moveToNext()) {
-            //ivFoto;
+            byte[] imagemPetBytes = Base64.decode(cur.getBlob(0),Base64.DEFAULT);
+            Bitmap foto = BitmapFactory.decodeByteArray(imagemPetBytes,0,imagemPetBytes.length);
+            ivFoto.setImageBitmap(foto);
             tvNomePet.setText("Nome do pet: " + cur.getString(1));
             tvCidade.setText("Cidade: " + cur.getString(2));
             tvDetalhesPet.setText("Detalhes do pet: " + cur.getString(3));
@@ -100,6 +105,7 @@ public class DetalhesPet extends AppCompatActivity {
             tvDono.setText("Nome do(a) dono(a): " + cur.getString(5));
             tvTelefone.setText(cur.getString(6));
             tvEmail.setText(cur.getString(7));
+
         }
     }
 }

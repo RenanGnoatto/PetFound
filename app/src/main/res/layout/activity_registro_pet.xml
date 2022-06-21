@@ -7,18 +7,41 @@
     android:background="@drawable/background"
     tools:context=".RegistroPet">
 
-    <Button
-        android:id="@+id/bt_cancelar_registro_pet"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/white"
-        android:text="Cancelar"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/CoordinatorLayoutRegistroPet"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrar_pet" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ImageView
+        android:id="@+id/iv_foto_pet"
+        android:layout_width="124dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/imagem_pet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gato" />
+
+    <Button
+        android:id="@+id/bt_incluir_foto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/incluir_foto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_foto_pet" />
+
 
     <EditText
         android:id="@+id/edt_nome_pet"
@@ -26,13 +49,16 @@
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="Nome do Pet"
+        android:hint="@string/nome_do_pet"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_incluir_foto" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_incluir_foto"
+        tools:ignore="TextContrastCheck" />
 
     <Spinner
         android:id="@+id/s_cidade_pet"
@@ -42,10 +68,13 @@
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/black"
         android:backgroundTintMode="add"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textSize="16sp"
-        android:contentDescription="Cidades"
+        android:contentDescription="@string/lista_cidades"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nome_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nome_pet"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/edt_detalhes_pet"
@@ -53,14 +82,17 @@
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Detalhes do Pet"
+        android:hint="@string/detalhes_do_pet"
         android:inputType="textMultiLine"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_cidade_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/s_cidade_pet"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/edt_detalhes_sumico"
@@ -68,14 +100,17 @@
         android:layout_height="48dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="25dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Detalhes Sumiço"
+        android:hint="@string/detalhes_do_sumico"
         android:inputType="textMultiLine"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_pet"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/bt_registrar_pet"
@@ -84,42 +119,25 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/white"
-        android:text="Registrar"
+        android:text="@string/registrar"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_detalhes_sumico" />
 
+
     <Button
-        android:id="@+id/bt_incluir_foto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
+        android:id="@+id/bt_cancelar_registro_pet"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
-        android:text="Incluir Foto"
+        android:backgroundTint="@color/white"
+        android:text="@string/cancelar"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_foto_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_registrar_pet" />
 
-    <ImageView
-        android:id="@+id/iv_foto_pet"
-        android:layout_width="124dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CoordinatorLayoutPet"
-        app:srcCompat="@drawable/gato" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/CoordinatorLayoutPet"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

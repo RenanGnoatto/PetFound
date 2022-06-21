@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -78,15 +79,16 @@ public class RegistroPet extends AppCompatActivity {
                             "'" + edtDetalhesSumico.getText() + "', " +
                             "'" + ivFotoPetString + "')");
                     edtNomePet.setText("");
-                    sCidadePet.setId(0);
+                    populaCidade(sCidadePet);
                     edtDetalhesPet.setText("");
                     edtDetalhesSumico.setText("");
-                    ivFotoPet.setImageDrawable(null);
-                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
+                    Drawable backgroundDrawable = Drawable.createFromPath("drawable/gato.jpg");
+                    ivFotoPet.setImageDrawable(backgroundDrawable);
+                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutRegistroPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
                     sbCadastroRealizado.show();
                 }
                 else {
-                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!",Snackbar.LENGTH_SHORT);
+                    Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutRegistroPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!",Snackbar.LENGTH_SHORT);
                     sbCadastroRealizado.show();
                 }
             }
@@ -126,13 +128,11 @@ public class RegistroPet extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 try {
                     Uri imageUri = dados.getData();
-
                     Bitmap fotoBuscada = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                     Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(fotoBuscada,256,256,true);
-
                     ivFotoPet.setImageBitmap(fotoRedimensionada);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 70, stream);
+                    fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 0, stream);
                     byte[] fotoEmBytes = stream.toByteArray();
                     ivFotoPetString = Base64.encodeToString(fotoEmBytes, Base64.DEFAULT);
                 } catch (Exception e){

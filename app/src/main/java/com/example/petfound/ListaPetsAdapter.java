@@ -4,6 +4,8 @@ package com.example.petfound;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Icon;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,8 +42,7 @@ public class ListaPetsAdapter extends ArrayAdapter<Pet> {
         tvCidadePet.setText("Cidade: " + listaPets.get(position).getCidade());
         tvDetalhesPet.setText("Detalhes do Pet: " + listaPets.get(position).getDetalhesPet());
         tvNomeDono.setText("Nome do(a) dono(a): " + listaPets.get(position).getNomeDono());
-
-        byte[] imagemPetBytes = listaPets.get(position).getFoto();
+        byte[] imagemPetBytes = Base64.decode(listaPets.get(position).getFoto(),Base64.DEFAULT);
         Bitmap foto = BitmapFactory.decodeByteArray(imagemPetBytes,0,imagemPetBytes.length);
         ivFotoPet.setImageBitmap(foto);
 

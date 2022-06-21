@@ -48,7 +48,7 @@ public class RegistroUsuario extends AppCompatActivity {
         btRegistrarUsuario = (Button) findViewById(R.id.bt_registrar_usuario);
         btCancelarRegistroUsuario = (Button) findViewById(R.id.bt_cancelar_registro_usuario);
         populaCidade(sCidade);
-        edtTelefone.addTextChangedListener(MascaraCampos.mask(edtTelefone,MascaraCampos.FORMAT_FONE));
+        //edtTelefone.addTextChangedListener(MascaraCampos.mask(edtTelefone,MascaraCampos.FORMAT_FONE));
 
         btCancelarRegistroUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,14 +74,14 @@ public class RegistroUsuario extends AppCompatActivity {
                                 edtTelefone.getText() + "'," +
                                 (int) sCidade.getSelectedItemId() + ")");
                         edtNomeUsuarioRegistro.setText("");
-                        sCidade.setId(0);
+                        populaCidade(sCidade);
                         edtTelefone.setText("");
                         edtEmailRegistro.setText("");
                         edtSenhaRegistro.setText("");
                         edtSenhaRegistroConfirmar.setText("");
                         cbSenhaRegistroMostrar.setChecked(false);
-                        /*Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutUsuario),"Registro realizado com sucesso!",Snackbar.LENGTH_SHORT);
-                        sbCadastroRealizado.show();*/
+                        Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutUsuario),"Registro realizado com sucesso!",Snackbar.LENGTH_SHORT);
+                        sbCadastroRealizado.show();
                     }
                     else {
                         Snackbar sbSenhasDiferentes = Snackbar.make(findViewById(R.id.CoordinatorLayoutUsuario),"As senhas informadas estão diferentes!",Snackbar.LENGTH_SHORT);

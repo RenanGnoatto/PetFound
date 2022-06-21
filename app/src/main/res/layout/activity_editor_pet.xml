@@ -7,6 +7,20 @@
     android:background="@drawable/background"
     tools:context=".EditorPet">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/CoordinatorLayoutEditorPet"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <Button
         android:id="@+id/bt_cancelar_atualizacao_pet"
         android:layout_width="250dp"
@@ -34,7 +48,8 @@
         android:ems="10"
         android:hint="Nome do Pet"
         android:inputType="textPersonName"
-        android:textColorHint="#263238"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +65,8 @@
         android:layout_marginEnd="56dp"
         android:backgroundTint="@color/black"
         android:backgroundTintMode="add"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
         android:contentDescription="@string/action_settings"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +85,8 @@
         android:gravity="start|top"
         android:hint="Detalhes do Pet"
         android:inputType="textMultiLine"
-        android:textColorHint="#4E342E"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +104,8 @@
         android:gravity="start|top"
         android:hint="Detalhes Sumiço"
         android:inputType="textMultiLine"
-        android:textColorHint="#5D4037"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
