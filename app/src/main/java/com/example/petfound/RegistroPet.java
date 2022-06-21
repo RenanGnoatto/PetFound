@@ -1,20 +1,24 @@
 package com.example.petfound;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -34,14 +38,14 @@ public class RegistroPet extends AppCompatActivity {
     private Button btRegistrarPet;
     private Button btCancelarRegistroPet;
     private SQLiteDatabase db = null;
-    private String ivFotoPetString;
+    private String ivFotoPetString = "";
     private Bundle bundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_pet);
-        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 7).getWritableDatabase();
         bundle = getIntent().getExtras();
 
         ivFotoPet = (ImageView) findViewById(R.id.iv_foto_pet);
@@ -67,7 +71,7 @@ public class RegistroPet extends AppCompatActivity {
         btRegistrarPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ivFotoPet.getDrawable() != null &&
+                if (ivFotoPetString.length() > 0 &&
                         edtNomePet.getText() != null &&
                         sCidadePet.getSelectedItemId() > 0) {
                     db.execSQL("insert into pet " +
@@ -83,6 +87,7 @@ public class RegistroPet extends AppCompatActivity {
                     edtDetalhesPet.setText("");
                     edtDetalhesSumico.setText("");
                     ivFotoPet.setImageResource(R.drawable.gato);
+
                     Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutRegistroPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
                     sbCadastroRealizado.show();
                 }
@@ -129,6 +134,9 @@ public class RegistroPet extends AppCompatActivity {
                     Uri imageUri = dados.getData();
                     Bitmap fotoBuscada = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                     Bitmap fotoRedimensionada = Bitmap.createScaledBitmap(fotoBuscada,256,256,true);
+                    /*Matrix matrix = new Matrix();
+                    matrix.postRotate(90);
+                    Bitmap fotoRedimensionada = Bitmap.createBitmap(fotoBuscada,0,0,5000,5000,matrix,true);*/
                     ivFotoPet.setImageBitmap(fotoRedimensionada);
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     fotoRedimensionada.compress(Bitmap.CompressFormat.PNG, 0, stream);

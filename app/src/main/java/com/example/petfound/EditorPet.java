@@ -37,13 +37,13 @@ public class EditorPet extends AppCompatActivity {
     private Button btExcluirPet;
     private SQLiteDatabase db = null;
     private Bundle bundle = new Bundle();
-    private String ivFotoPetString;
+    private String ivFotoPetString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor_pet);
-        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 7).getWritableDatabase();
 
         ivFotoPetEdit = (ImageView) findViewById(R.id.iv_foto_pet_edit);
         btAlterarFoto = (Button) findViewById(R.id.bt_alterar_foto);
@@ -77,7 +77,7 @@ public class EditorPet extends AppCompatActivity {
         btAtualizarPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ivFotoPetEdit.getDrawable() != null &&
+                if (ivFotoPetString.length() > 0 &&
                         edtNomePetEdit.getText() != null &&
                         sCidadePetEdit.getSelectedItemId() > 0) {
                         db.execSQL("update pet set nome = '" + edtNomePetEdit.getText() +
@@ -86,9 +86,8 @@ public class EditorPet extends AppCompatActivity {
                                         "', detalhes_sumico = '" + edtDetalhesSumicoEdit.getText() +
                                 "', foto1 = '" + ivFotoPetString + "' " +
                                         " where id = " + bundle.getInt("idPet"));
-                        finish();
-                        /*Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"Registro do Pet atualizado com sucesso. Boa sorte nas buscas!", Snackbar.LENGTH_SHORT);
-                        sbCadastroAtualizado.show();*/
+                        Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"Registro do Pet atualizado com sucesso. Boa sorte nas buscas!", Snackbar.LENGTH_SHORT);
+                        sbCadastroAtualizado.show();
                 }
                 else {
                     Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!", Snackbar.LENGTH_SHORT);

@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class TelaPrincipal extends AppCompatActivity {
 
     private TextView tvBoasVindas;
@@ -17,6 +19,7 @@ public class TelaPrincipal extends AppCompatActivity {
     private Button btRelatarSumico;
     private Bundle bundle = new Bundle();
     private Bundle bundle2 = new Bundle();
+    private Snackbar snackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,13 @@ public class TelaPrincipal extends AppCompatActivity {
             }
         });
 
+        btEditarPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar = Snackbar.make(findViewById(R.id.CoordinatorLayoutTelaPrincipal),"Tela não disponível",Snackbar.LENGTH_SHORT);
+                snackbar.show();
+            }
+        });
         btMeusPets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

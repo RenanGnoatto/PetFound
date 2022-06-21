@@ -41,7 +41,7 @@
                         "id_usuario integer not null, " +
                         "detalhes_pet text, " +
                         "detalhes_sumico text, "+
-                        "foto1 longblob not null, " +
+                        "foto1 blob not null, " +
                         "foto2 blob, " +
                         "foto3 blob, " +
                         "foto4 blob, " +

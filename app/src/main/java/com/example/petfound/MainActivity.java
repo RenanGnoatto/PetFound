@@ -32,14 +32,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 7).getWritableDatabase();
 
         edtEmailLogin = (EditText) findViewById(R.id.edt_email_login);
         edtSenhaLogin = (EditText) findViewById(R.id.edt_senha_login);
         cbSenhaLoginMostrar = (CheckBox) findViewById(R.id.cb_senha_login_mostrar);
         btLogar = (Button) findViewById(R.id.bt_logar);
         btCriarConta = (Button) findViewById(R.id.bt_criar_conta);
-        btSair = (Button) findViewById(R.id.bt_sair);
 
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,12 +69,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finishAffinity();
-            }
-        });
     }
 
     public void validaLogin(String usuario, String senha) {

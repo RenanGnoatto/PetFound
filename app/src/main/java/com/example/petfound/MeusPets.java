@@ -29,7 +29,7 @@ public class MeusPets extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meus_pets);
-        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 7).getWritableDatabase();
 
         lvMeusPets = (ListView) findViewById(R.id.lv_meus_pets);
         adapter = new ListaPetsAdapter(this, adicionaPets());

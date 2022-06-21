@@ -38,7 +38,7 @@ public class DetalhesPet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_pet);
-        db = new DatabaseManager(this, "BancoDados", null, 6).getWritableDatabase();
+        db = new DatabaseManager(this, "BancoDados", null, 7).getWritableDatabase();
 
         ivFoto = (ImageView) findViewById(R.id.iv_foto_det);
         tvNomePet = (TextView) findViewById(R.id.tv_nome_pet_det);
