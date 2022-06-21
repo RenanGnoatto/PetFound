@@ -34,6 +34,7 @@ public class EditorPet extends AppCompatActivity {
     private EditText edtDetalhesSumicoEdit;
     private Button btAtualizarPet;
     private Button btCancelarAtualizacaoPet;
+    private Button btExcluirPet;
     private SQLiteDatabase db = null;
     private Bundle bundle = new Bundle();
     private String ivFotoPetString;
@@ -52,6 +53,7 @@ public class EditorPet extends AppCompatActivity {
         edtDetalhesSumicoEdit = (EditText) findViewById(R.id.edt_detalhes_sumico_edit);
         btAtualizarPet = (Button) findViewById(R.id.bt_atualizar_pet);
         btCancelarAtualizacaoPet = (Button) findViewById(R.id.bt_cancelar_atualizacao_pet);
+        btExcluirPet = (Button) findViewById(R.id.bt_excluir_pet);
 
         populaCidade(sCidadePetEdit);
         bundle = getIntent().getExtras();
@@ -92,6 +94,20 @@ public class EditorPet extends AppCompatActivity {
                     Snackbar sbCadastroAtualizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutEditorPet),"É necessário informar uma Foto, Nome, cidade e detalhes do seu Pet!", Snackbar.LENGTH_SHORT);
                     sbCadastroAtualizado.show();
                 }
+            }
+        });
+
+        btExcluirPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int idPet = bundle.getInt("idPet");
+                try {
+                    db.execSQL("delete from pet where id = " + idPet);
+                }
+                catch(Exception e) {
+                    System.out.println(e.toString());
+                }
+                finish();
             }
         });
     }

@@ -82,8 +82,7 @@ public class RegistroPet extends AppCompatActivity {
                     populaCidade(sCidadePet);
                     edtDetalhesPet.setText("");
                     edtDetalhesSumico.setText("");
-                    Drawable backgroundDrawable = Drawable.createFromPath("drawable/gato.jpg");
-                    ivFotoPet.setImageDrawable(backgroundDrawable);
+                    ivFotoPet.setImageResource(R.drawable.gato);
                     Snackbar sbCadastroRealizado = Snackbar.make(findViewById(R.id.CoordinatorLayoutRegistroPet),"Pet cadastrado com sucesso. Boa sorte nas buscas!",Snackbar.LENGTH_SHORT);
                     sbCadastroRealizado.show();
                 }

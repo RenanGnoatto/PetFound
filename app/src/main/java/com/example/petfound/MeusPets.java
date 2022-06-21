@@ -46,6 +46,15 @@ public class MeusPets extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        lvMeusPets = (ListView) findViewById(R.id.lv_meus_pets);
+        adapter = new ListaPetsAdapter(this, adicionaPets());
+        lvMeusPets.setAdapter(adapter);
+    }
+
     private ArrayList<Pet> adicionaPets() {
         bundle = getIntent().getExtras();
         int idUsuario = Integer.parseInt(bundle.getString("idUsuario"));

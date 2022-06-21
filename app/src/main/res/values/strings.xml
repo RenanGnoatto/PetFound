@@ -9,11 +9,25 @@
     <string name="action_settings">Settings</string>
     <string name="incluir_foto">Incluir Foto</string>
     <string name="nome_do_pet">Nome do Pet</string>
-    <string name="detalhes_do_pet">Detalhe do Pet</string>
+    <string name="detalhes_do_pet">Detalhes do Pet</string>
     <string name="detalhes_do_sumico">Detalhes do Sumiço</string>
     <string name="registrar">Registrar</string>
     <string name="cancelar">Cancelar</string>
     <string name="imagem_pet">Imagem do Pet</string>
     <string name="lista_cidades">Lista de Cidades</string>
-
+    <string name="excluir">Excluir</string>
+    <string name="alterar_foto">Alterar Foto</string>
+    <string name="atualizar">Atualizar</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="mostrar_senha">Mostrar Senha</string>
+    <string name="logar">Logar</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="criar_nova_conta">Criar Nova Conta</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="meus_pets">Meus Pets</string>
+    <string name="lista_de_pets">Lista de Pets</string>
+    <string name="relatar_sumico">Relatar Sumiço</string>
 </resources>
